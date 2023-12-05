@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Password Recovery</title>
+</head>
+<body>
+
+<h2>Forgot Your Password?</h2>
+<p>Please enter your email address below.<br>We will send you an email to reset your password.</p>
+
+<form action="/recovery.html" method="post">
+ <div class="container">
+    <label for="email"><b>Email</b></label>
+    <input type="email" placeholder="Enter Email" name="email" required>
+
+    <button type="submit" onclick="location.href='home.html';" class="btn">Reset Password</button>
+ </div>
+</form>
+<div class="containerview">
+<button type="button" class="cancelbtn" onclick="location.href='login.html';">Cancel</button><br>
+ <span class="psw"><b>Remember your password?</b> <br><a href="login.html">Login</a></span>
+</div>
+<div class="footer">
+    <p> NetPree &copy; 2023</p>
+</div>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: rgb(255, 253, 254);
+        background: radial-gradient(circle, rgb(234, 206, 218) 0%, rgb(141, 187, 240) 100%);
+    }
+    a{
+        color:#fff;
+    }
+    h2{
+        font-size: 64px;
+    }
+  
+    h2,p{
+        text-align: center;
+         position: center;
+         padding-top: 100px;
+    }
+    input[type="text"], input[type="email"]{
+        width: 90%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            border-radius: 20px;
+            background: #f1f1f1;
+    }
+
+    .btn{
+        width: 50%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        color:#f1f1f1;
+        border-radius: 20px;
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 5%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    }
+
+    .cancelbtn{
+        width: 20%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        color:#f1f1f1;
+        border-radius: 20px;
+        background: rgb(238,174,202);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            }
+
+    .psw a {
+        width: 5%;
+        padding: 15px;
+        text-align: center;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        font-size: small;
+        color:#f1f1f1;
+        border-radius: 20px;
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 5%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); 
+
+    }
+    .psw b{
+        font-size: 18px;
+    }
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        height: 200px;
+        padding: 20px;
+        padding-top: 20px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+    }
+    .containerview {
+        position: center;
+        height: 128px;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: black;
+        border-radius: 20px;
+        box-shadow: inset;
+        text-align: center;
+        padding: 10px;
+    }
+    .footer {
+        position: center;
+        left: 0;
+        height: 20px;
+        width: 100%;
+    
+        color: black;
+        text-align: center;
+        padding: 10px;
+    }
+    .btn:hover {
+        opacity:1;
+    }
+    .cancelbtn:hover {
+        opacity:1;
+    }
+
+    </style>
+</body>
+</html>

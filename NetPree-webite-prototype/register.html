@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <div class="header">
+        <img class="logo" src="./images/NetPree.png" alt="Logo">
+       </div>
+    <form id="registrationForm" action="#">
+        <h1>Registration Form</h1>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        
+        <label for="gender" >Gender:</label>
+        <label for="male">Male<input type="radio" id="male-female" name="male-female" required></label>
+        <label for="female">Female<input type="radio" id="male-female" name="male-female" required></label><br>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+        <input type="submit" onclick="location.href='login.html';" value="Register">
+    </form>
+    <div class="footer">
+        <p> NetPree &copy; 2023</p>
+    </div>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: rgb(255, 253, 254);
+    background: radial-gradient(circle, rgb(234, 206, 218) 0%, rgb(141, 187, 240) 100%);
+        
+        }
+        
+        form {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            margin-right: 20px;
+            display: inline-flex;
+        }
+        
+        input {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+        
+        input[type="submit"] {
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 5%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+            border-radius: 20px;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 95%;
+            opacity: 0.9;
+        }
+        
+        .header {
+            position: relative;
+            height: 100px;
+          }
+      
+          .logo {
+            width: 400px;
+            height: inherit;
+            position: absolute;
+            margin-bottom: 10px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background: rgb(238,174,202);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            color: black;
+            text-align: center;
+            padding: 10px;
+        }
+      
+        
+    </style>
+
+    <script src="script.js">
+        const registrationForm = document.getElementById('registrationForm');
+
+registrationForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    if (password !== confirmPassword) {
+        alert('Passwords do not match');
+        return;
+    }
+
+    // Send the user information to the server for registration
+    console.log('User information:', {
+        firstName,
+        lastName,
+        email,
+        password
+    });
+});
+$('form').on('submit', function(e) {
+    e.preventDefault(); // Prevent the form from submitting normally
+    // Perform your form submission logic here
+   
+    // Redirect to the home.html page after successful submission
+    window.location.href = 'login.html';
+   });
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> NetPree-Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: rgb(255, 253, 254);
+            background: radial-gradient(circle, rgb(234, 206, 218) 0%, rgb(141, 187, 240) 100%);
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 90%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            border-radius: 20px;
+            background: #f1f1f1;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+        .header {
+            position: relative;
+            height: 100px;
+          }
+      
+          .logo {
+            width: 400px;
+            height: inherit;
+            position: absolute;
+            margin-bottom: 10px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+      
+          .nav {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+          }
+
+        .btn {
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 5%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+            border-radius: 20px;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        .btn:hover {
+            opacity:1;
+        }
+
+        a {
+            color: rgb(62, 78, 196);
+            ;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background: rgb(238,174,202);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            color: black;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img class="logo" src="./images/NetPree.png" alt="Logo">
+       </div>
+    <div class="container">
+        <h2>Login</h2>
+        <form action="/login.html" method="post">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <label>
+                <input type="checkbox" name="remember" value="1"> Remember me
+            </label>
+
+            <button type="submit" onclick="location.href='home.html';" class="btn">Login</button>
+        </form>
+        <p>Not a member? <a href="/register.html">Register now</a></p>
+        <p><a href="/recovery.html">Forgot your password?</a></p>
+    </div>
+
+    <div class="footer">
+        <p> NetPree &copy; 2023</p>
+    </div>
+    <script>
+        $('form').on('submit', function(e) {
+            e.preventDefault(); // Prevent the form from submitting normally
+            // Perform your form submission logic here
+           
+            // Redirect to the home.html page after successful submission
+            window.location.href = 'home.html';
+           });
+    </script>
+</body>
+</html>
